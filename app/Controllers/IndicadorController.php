@@ -1,27 +1,34 @@
 <?php
+
 namespace App\Controllers;
 
 use App\Models\Indicador;
 
-class IndicadorController {
-    public function index() {
+class IndicadorController
+{
+    public function index()
+    {
         $indicadores = Indicador::all();
         require_once __DIR__ . '/../Views/home.view.php';
-
     }
 
-    public function store() {
+    public function store()
+    {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $descripcion = $_POST['descripcion'] ?? '';
             $cantidad = $_POST['cantidad'] ?? 0;
 
             Indicador::store($descripcion, $cantidad);
+
+            $_SESSION['mensaje'] = 'Indicador guardado correctamente';
+            $_SESSION['tipo'] = 'success';
             header('Location:' . BASE_URL . '/admin/indicadores');
             exit;
         }
     }
 
-    public function update() {
+    public function update()
+    {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = $_POST['id'] ?? null;
             $descripcion = $_POST['descripcion'] ?? '';
@@ -31,12 +38,16 @@ class IndicadorController {
                 Indicador::update($id, $descripcion, $cantidad);
             }
 
+            $_SESSION['mensaje'] = 'Indicador actualizado correctamente';
+            $_SESSION['tipo'] = 'success';
+
             header('Location:' . BASE_URL . '/admin/indicadores');
             exit;
         }
     }
 
-    public function destroy() {
+    public function destroy()
+    {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = $_POST['id'] ?? null;
 
@@ -44,6 +55,8 @@ class IndicadorController {
                 Indicador::destroy($id);
             }
 
+            $_SESSION['mensaje'] = 'Indicador eliminado correctamente';
+            $_SESSION['tipo'] = 'success';
             header('Location:' . BASE_URL . '/admin/indicadores');
             exit;
         }

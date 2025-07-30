@@ -44,6 +44,9 @@ class PublicacionController{
 
         $publicacion->save();
 
+        $_SESSION['mensaje'] = 'Publicación guardada correctamente';
+        $_SESSION['tipo'] = 'success';
+
         header('Location: ' . BASE_URL . '/admin/publicaciones');
         exit;
     }
@@ -72,6 +75,9 @@ class PublicacionController{
 
         $publicacion->save();
 
+        $_SESSION['mensaje'] = 'Publicación actualizada correctamente';
+        $_SESSION['tipo'] = 'success';
+
         header('Location: ' . BASE_URL . '/admin/publicaciones');
         exit;
     }
@@ -86,6 +92,9 @@ class PublicacionController{
         }
 
         Publicacion::destroy($id);
+
+        $_SESSION['mensaje'] = 'Publicación eliminada correctamente';
+        $_SESSION['tipo'] = 'success';
 
         header('Location: ' . BASE_URL . '/admin/publicaciones');
         exit;

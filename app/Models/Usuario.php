@@ -7,7 +7,7 @@ use PDO;
 class Usuario{
     public static function validar($email, $password) {
         $pdo = Conexion::conectar();
-        $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE email = ? LIMIT 1");
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ? LIMIT 1");
         $stmt->execute([$email]);
         $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 

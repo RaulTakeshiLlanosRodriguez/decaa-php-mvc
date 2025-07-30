@@ -28,4 +28,30 @@ class Indicador {
         $stmt = $pdo->prepare("DELETE FROM indicadores WHERE id = ?");
         return $stmt->execute([$id]);
     }
+
+    public static function buscar( $pagina = 1, $porPagina = 5)
+    {
+        $pdo = Conexion::conectar();
+        $offset = ($pagina - 1) * $porPagina;
+
+        $sql = "SELECT * FROM indicadores";
+        $params = [];
+
+        $sql .= " ORDER BY id ASC LIMIT $porPagina OFFSET $offset";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute($params);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public static function contar()
+    {
+        $pdo = Conexion::conectar();
+
+        $sql = "SELECT COUNT(*) FROM indicadores";
+        $params = [];
+
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute($params);
+        return (int) $stmt->fetchColumn();
+    }
 }

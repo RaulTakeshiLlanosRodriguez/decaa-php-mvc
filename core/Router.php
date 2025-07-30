@@ -25,14 +25,25 @@ class Router
         $routes = $this->routes[$method] ?? [];
 
         if (array_key_exists($uri, $routes)) {
-            [$controller, $method] = $routes[$uri];
-            $controllerInstance = new $controller();
-            $controllerInstance->$method();
+            $action = $routes[$uri];
+
+            if (is_callable($action)) {
+                // Si es un Closure, lo ejecuta directamente
+                call_user_func($action);
+            } elseif (is_array($action) && count($action) === 2) {
+                [$controller, $method] = $action;
+                $controllerInstance = new $controller();
+                $controllerInstance->$method();
+            } else {
+                http_response_code(500);
+                echo "500 - Acción inválida";
+            }
         } else {
             http_response_code(404);
             echo "404 - Ruta no encontrada";
         }
     }
+
 
     private function getCurrentUri()
     {
