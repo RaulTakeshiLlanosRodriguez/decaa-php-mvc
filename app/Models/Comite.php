@@ -53,4 +53,25 @@ class Comite{
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+    public static function store($carrera)
+    {
+        $pdo = Conexion::conectar();
+        $stmt = $pdo->prepare("INSERT INTO comites (carrera) VALUES (?)");
+        return $stmt->execute([$carrera]);
+    }
+
+    public static function update($id,$carrera)
+    {
+        $pdo = Conexion::conectar();
+        $stmt = $pdo->prepare("UPDATE comites SET carrera = ? WHERE id = ?");
+        return $stmt->execute([$carrera, $id]);
+    }
+
+    public static function destroy($id)
+    {
+        $pdo = Conexion::conectar();
+        $stmt = $pdo->prepare("DELETE FROM comites WHERE id = ?");
+        return $stmt->execute([$id]);
+    }
+
 }

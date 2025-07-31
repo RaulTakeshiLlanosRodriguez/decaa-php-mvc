@@ -27,15 +27,15 @@ class Miembro
     public static function store($comite_id, $rol, $nombre)
     {
         $pdo = Conexion::conectar();
-        $stmt = $pdo->prepare("INSERT INTO miembros (comite_id, rol, nombre) VALUES (?, ?, ?");
+        $stmt = $pdo->prepare("INSERT INTO miembros (comite_id, rol, nombre) VALUES (?, ?, ?)");
         return $stmt->execute([$comite_id, $rol, $nombre]);
     }
 
-    public static function update($id, $comite_id, $rol, $nombre)
+    public static function update($id, $rol, $nombre)
     {
         $pdo = Conexion::conectar();
-        $stmt = $pdo->prepare("UPDATE miembros SET comite_id = ?, rol = ?, nombre = ? WHERE id = ?");
-        return $stmt->execute([$comite_id, $nombre, $id]);
+        $stmt = $pdo->prepare("UPDATE miembros SET rol = ?, nombre = ? WHERE id = ?");
+        return $stmt->execute([$rol, $nombre, $id]);
     }
 
     public static function destroy($id)

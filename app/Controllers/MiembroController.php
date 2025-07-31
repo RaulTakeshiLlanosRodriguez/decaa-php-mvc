@@ -32,8 +32,8 @@ class MiembroController{
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $comite_id = $_POST['comite_id'] ?? null;
-            $rol = $_POST['nombre'] ?? '';
-            $nombre = $_POST['cargo'] ?? '';
+            $rol = $_POST['rol'] ?? '';
+            $nombre = $_POST['nombre'] ?? '';
             
             if ($comite_id) {
                 Miembro::store($comite_id, $rol, $nombre);
@@ -51,12 +51,13 @@ class MiembroController{
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = $_POST['id'] ?? null;
-            $comite_id = $_POST['comite_id'] ?? null;
             $rol = $_POST['rol'] ?? '';
             $nombre = $_POST['nombre'] ?? '';
             
-            if ($id && $comite_id) {
-                Miembro::update($id, $comite_id, $rol, $nombre);
+            if ($id) {
+                $miembro = Miembro::findById($id);
+                $comite_id = $miembro['comite_id'];
+                Miembro::update($id, $rol, $nombre);
                 
                 $_SESSION['mensaje'] = 'Miembro actualizado correctamente';
                 $_SESSION['tipo'] = 'success';
@@ -71,9 +72,10 @@ class MiembroController{
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = $_POST['id'] ?? null;
-            $comite_id = $_POST['comite_id'] ?? null;
             
             if ($id) {
+                $miembro = Miembro::findById($id);
+                $comite_id = $miembro['comite_id'];
                 Miembro::destroy($id);
                 
                 $_SESSION['mensaje'] = 'Miembro eliminado correctamente';
