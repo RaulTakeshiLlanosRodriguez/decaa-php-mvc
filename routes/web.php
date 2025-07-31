@@ -5,6 +5,7 @@ use App\Controllers\AuthController;
 use App\Controllers\ComiteController;
 use App\Controllers\HomeController;
 use App\Controllers\IndicadorController;
+use App\Controllers\MiembroController;
 use App\Controllers\PublicacionController;
 
 $router->get('/decaa', [HomeController::class, 'decaa']);
@@ -29,6 +30,8 @@ $router->get('/admin', function () {
 });
 $router->get('/admin/publicaciones', [AdminController::class, 'publications']);
 $router->get('/admin/indicadores', [AdminController::class, 'indicators']);
+$router->get('/admin/comites', [AdminController::class, 'comites']);
+$router->get('/admin/miembros', [MiembroController::class, 'index']);
 
 $router->post('/admin/publicaciones', [PublicacionController::class, 'store']);
 $router->post('/admin/publicaciones/update', [PublicacionController::class, 'update']);
@@ -37,3 +40,11 @@ $router->post('/admin/publicaciones/delete', [PublicacionController::class, 'des
 $router->post('/admin/indicadores', [IndicadorController::class, 'store']);
 $router->post('/admin/indicadores/update', [IndicadorController::class, 'update']);
 $router->post('/admin/indicadores/delete', [IndicadorController::class, 'destroy']);
+
+$router->post('/admin/comites', [ComiteController::class, 'store']);
+$router->post('/admin/comites/update', [ComiteController::class, 'update']);
+$router->post('/admin/comites/delete', [ComiteController::class, 'destroy']);
+
+$router->post('/admin/miembros', [MiembroController::class, 'store']);
+$router->post('/admin/miembros/update', [MiembroController::class, 'update']);
+$router->post('/admin/miembros/delete', [MiembroController::class, 'destroy']);
