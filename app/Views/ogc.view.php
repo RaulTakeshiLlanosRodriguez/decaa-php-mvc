@@ -22,26 +22,12 @@
                 <p>Supervisar la implementación de las políticas de gestión de la calidad.</p>
             </div>
             <div class="funcion-card"><i class="fas fa-check-circle icono"></i>
-                <p>Recoger información y apoyar en la formulación y/o modificación de normas y procedimientos técnicos
-                    relativos a la gestión por procesos de la calidad universitaria.</p>
-            </div>
-            <div class="funcion-card"><i class="fas fa-check-circle icono"></i>
                 <p> Cumplir y hacer cumplir los requisitos y control de la documentación y registros de los procesos de
                     la calidad.</p>
             </div>
             <div class="funcion-card"><i class="fas fa-check-circle icono"></i>
-                <p>Evaluar la aplicación de los procesos de aseguramiento de la calidad universitaria y verifica el
-                    cumplimiento de metas de los indicadores de gestión de calidad de acuerdo a requisitos establecidos
-                    por SUNEDU.</p>
-            </div>
-            <div class="funcion-card"><i class="fas fa-check-circle icono"></i>
                 <p>Elaborar las normas y manuales requeridos para el funcionamiento del Sistema de Gestión de la
                     Calidad.</p>
-            </div>
-            <div class="funcion-card"><i class="fas fa-check-circle icono"></i>
-                <p>Planificar, ejecutar y valuar el plan de capacitación sobre SGC para los miembros involucrados en los
-                    sistemas de calidad dentro de la DECAA, Comisiones de Calidad de las Facultades y Comités Internos
-                    de las carreras profesionales.</p>
             </div>
             <div class="funcion-card"><i class="fas fa-check-circle icono"></i>
                 <p>Fomentar una cultura de la evaluación de la Calidad en todos los ámbitos académicos y administrativos
@@ -68,6 +54,20 @@
             </div>
             <div class="funcion-card"><i class="fas fa-check-circle icono"></i>
                 <p>Otras que le asigne el director(a) del DECAA.</p>
+            </div>
+            <div class="funcion-card"><i class="fas fa-check-circle icono"></i>
+                <p>Recoger información y apoyar en la formulación y/o modificación de normas y procedimientos técnicos
+                    relativos a la gestión por procesos de la calidad universitaria.</p>
+            </div>
+            <div class="funcion-card"><i class="fas fa-check-circle icono"></i>
+                <p>Evaluar la aplicación de los procesos de aseguramiento de la calidad universitaria y verifica el
+                    cumplimiento de metas de los indicadores de gestión de calidad de acuerdo a requisitos establecidos
+                    por SUNEDU.</p>
+            </div>
+            <div class="funcion-card"><i class="fas fa-check-circle icono"></i>
+                <p>Planificar, ejecutar y valuar el plan de capacitación sobre SGC para los miembros involucrados en los
+                    sistemas de calidad dentro de la DECAA, Comisiones de Calidad de las Facultades y Comités Internos
+                    de las carreras profesionales.</p>
             </div>
         </ul>
     </div>

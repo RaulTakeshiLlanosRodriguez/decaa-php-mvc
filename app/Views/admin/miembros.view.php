@@ -1,5 +1,9 @@
 <?php ob_start(); ?>
 <div class="container mt-4">
+    <?php if (!is_array($comite)): ?>
+        <p style="color:red;">Error: Comité no encontrado.</p>
+        <?php return; ?>
+    <?php endif; ?>
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h3>Miembros del Comité: <?= $comite['carrera'] ?></h3>
         <div>

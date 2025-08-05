@@ -4,7 +4,8 @@ require_once __DIR__ . '/config/session.php';
 require_once __DIR__ . '/config/app.php';
 require_once __DIR__ . '/config/helpers.php';
 require_once __DIR__ . '/config/database.php';
-require_once __DIR__ . '/core/Router.php';
+require_once __DIR__ . '/config/auth.php';
+require_once __DIR__ . '/Core/Router.php';
 
 // Autocarga de controladores y modelos si no usas Composer
 spl_autoload_register(function ($class) {

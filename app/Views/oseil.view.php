@@ -27,10 +27,6 @@
         <h3>Funciones Generales</h3>
         <div class="funciones-grid">
             <div class="funcion-card"><i class="fas fa-check-circle icono"></i>
-                <p>Establecer una comunicación permanente y bidireccional que fomente y mantenga la vinculación y el
-                    sentido de pertenencia de los graduados con la UNS para la obtención de beneficios mutuos.</p>
-            </div>
-            <div class="funcion-card"><i class="fas fa-check-circle icono"></i>
                 <p>Impulsar la difusión de la producción científica de impacto social de los graduados.</p>
             </div>
             <div class="funcion-card"><i class="fas fa-check-circle icono"></i>
@@ -58,6 +54,10 @@
             <div class="funcion-card"><i class="fas fa-check-circle icono"></i>
                 <p>Impulsar la inserción laboral de los egresados mediante la consolidación de la relación de la UNS con
                     el sector empresarial.</p>
+            </div>
+            <div class="funcion-card"><i class="fas fa-check-circle icono"></i>
+                <p>Establecer una comunicación permanente y bidireccional que fomente y mantenga la vinculación y el
+                    sentido de pertenencia de los graduados con la UNS para la obtención de beneficios mutuos.</p>
             </div>
         </div>
     </div>

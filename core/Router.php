@@ -24,6 +24,7 @@ class Router
 
         $routes = $this->routes[$method] ?? [];
 
+
         if (array_key_exists($uri, $routes)) {
             $action = $routes[$uri];
 
@@ -47,10 +48,12 @@ class Router
 
     private function getCurrentUri()
     {
-        $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
         $scriptName = dirname($_SERVER['SCRIPT_NAME']);
-        return $this->normalize(str_replace($scriptName, '', $uri));
+        $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        $uri = '/' . trim(str_replace($scriptName, '', $uri), '/');
+        return $this->normalize($uri);
     }
+
 
     private function normalize($uri)
     {

@@ -18,13 +18,14 @@ class MiembroController{
         }
         $pagina = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1;
         $porPagina = 8;
+        $comite = Comite::findById($comite_id);
         $miembros = Miembro::buscar($comite_id, $pagina, $porPagina);
 
         $total = Miembro::contar($comite_id);
 
         $paginador = new Paginator($total, $pagina, $porPagina, BASE_URL . '/admin/comites', $_GET);
 
-        $comite = Comite::findById($comite_id);
+        
         require_once __DIR__ . '/../Views/admin/miembros.view.php';
     }
 

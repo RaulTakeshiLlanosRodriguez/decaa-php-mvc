@@ -29,7 +29,7 @@
                 <li class="has-submenu">
                     <a href="#">NOSOTROS</a>
                     <ul class="submenu">
-                        <li><a href="<?=BASE_URL?>/decaa">Acerca del DECAA</a></li>
+                        <li><a href="<?=BASE_URL?>/nosotros">Acerca del DECAA</a></li>
                         <li><a href="<?=BASE_URL?>/oseil">Oficina de Seguimiento al Egresado y de Inserción Laboral</a>
                         </li>
                         <li><a href="<?=BASE_URL?>/ogc">Oficina de Gestión de Calidad</a></li>
