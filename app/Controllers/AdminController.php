@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\Archivo;
 use App\Models\Comite;
 use App\Models\Indicador;
 use App\Models\Publicacion;
@@ -54,5 +55,18 @@ class AdminController
         $paginador = new Paginator($total, $pagina, $porPagina, BASE_URL . '/admin/comites', $_GET);
 
         require_once __DIR__ . '/../Views/admin/comites.view.php';
+    }
+
+    public function innovaciones()
+    {
+        $pagina = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1;
+        $porPagina = 8;
+
+        $archivos = Archivo::buscar($pagina, $porPagina);
+        $total = Archivo::contar();
+
+        $paginador = new Paginator($total, $pagina, $porPagina, BASE_URL . '/admin/innovaciones', $_GET);
+
+        require_once __DIR__ . '/../Views/admin/innovaciones.view.php';
     }
 }

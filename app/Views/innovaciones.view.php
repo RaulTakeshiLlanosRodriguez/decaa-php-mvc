@@ -2,15 +2,24 @@
 <section class="innovaciones-container">
     <h2>Publicaciones</h2>
     <div class="publicaciones-grid">
-        <div class="guia-card">
-            <img src='<?=BASE_URL?>/assets/modelo-acreditacion-2025.png' alt="Portada de la guía">
-            <div class="guia-body">
-                <a href="https://unsanta-my.sharepoint.com/:b:/g/personal/oaac_uns_edu_pe/EfpfViqmubpHuMy4lK86W6EBahsF1Bp879M0dF2oLnU1rg?e=obN8TO"
-                    target="_blank"><i class="fas fa-file-pdf"></i>
-                    Nuevo Modelo SINEACE 2025
-                </a>
-            </div>
-        </div>
+        <?php if (!empty($archivos)): ?>
+            <?php foreach ($archivos as $archivo): ?>
+                <div class="guia-card">
+                    <img src="<?= BASE_URL ?>/<?= htmlspecialchars($archivo['ruta']) ?>" alt="Portada de la guía">
+                    <div class="guia-body">
+                        <?php if (!empty($archivo['enlace'])): ?>
+                            <a href="<?= htmlspecialchars($archivo['enlace']) ?>" target="_blank">
+                                <i class="fas fa-file-pdf"></i> <?= htmlspecialchars($archivo['descripcion']) ?>
+                            </a>
+                        <?php else: ?>
+                            <p><?= htmlspecialchars($archivo['descripcion']) ?></p>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p>No hay publicaciones registradas.</p>
+        <?php endif; ?>
     </div>
 </section>
 <?php $contenido = ob_get_clean();
