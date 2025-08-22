@@ -34,6 +34,11 @@
                             <i class="fas fa-chart-bar me-2"></i>Indicadores
                         </a>
                     </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link <?= isActive('/admin/innovaciones') ? 'bg-white text-danger rounded px-3 py-2' : 'text-white' ?>" href="<?= BASE_URL ?>/admin/innovaciones">
+                            <i class="fas fa-lightbulb me-2"></i>Innovaciones
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div class="mb-3 text-center">

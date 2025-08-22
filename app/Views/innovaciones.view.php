@@ -5,7 +5,7 @@
         <?php if (!empty($archivos)): ?>
             <?php foreach ($archivos as $archivo): ?>
                 <div class="guia-card">
-                    <img src="<?= BASE_URL ?>/<?= htmlspecialchars($archivo['ruta']) ?>" alt="Portada de la guía">
+                    <img src="<?= BASE_URL . '/public/' . htmlspecialchars($archivo['ruta_archivo']) ?>" alt="Portada de la guía">
                     <div class="guia-body">
                         <?php if (!empty($archivo['enlace'])): ?>
                             <a href="<?= htmlspecialchars($archivo['enlace']) ?>" target="_blank">

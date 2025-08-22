@@ -1,6 +1,7 @@
 <?php
 
 use App\Controllers\AdminController;
+use App\Controllers\ArchivoController;
 use App\Controllers\AuthController;
 use App\Controllers\ComiteController;
 use App\Controllers\HomeController;
@@ -13,7 +14,6 @@ $router->get('/oseil', [HomeController::class, 'oseil']);
 $router->get('/ogc', [HomeController::class, 'ogc']);
 $router->get('/olic', [HomeController::class, 'olic']);
 $router->get('/oaac', [HomeController::class, 'oaac']);
-$router->get('/innovaciones', [HomeController::class, 'innovaciones']);
 $router->get('/acreditacion', [HomeController::class, 'acreditacion']);
 
 $router->get('/login', [AuthController::class, 'showLoginForm']);
@@ -23,15 +23,18 @@ $router->get('/logout', [AuthController::class, 'logout']);
 $router->get('/', [IndicadorController::class, 'index']);
 $router->get('/comites', [ComiteController::class, 'index']);
 $router->get('/publicaciones', [PublicacionController::class, 'index']);
+$router->get('/innovaciones', [ArchivoController::class, 'index']);
 
 $router->get('/admin', function () {
     requireAuth();
     header('Location:' .BASE_URL. '/admin/publicaciones');
     exit;
-});
+}
+);
 $router->get('/admin/publicaciones', authMiddleware(AdminController::class, 'publications'));
 $router->get('/admin/indicadores', authMiddleware(AdminController::class, 'indicators'));
 $router->get('/admin/comites', authMiddleware(AdminController::class, 'comites'));
+$router->get('/admin/innovaciones', authMiddleware(AdminController::class, 'innovaciones'));
 $router->get('/admin/miembros', authMiddleware(MiembroController::class, 'index'));
 
 $router->post('/admin/publicaciones', authMiddleware(PublicacionController::class, 'store'));
@@ -49,3 +52,7 @@ $router->post('/admin/comites/delete', authMiddleware(ComiteController::class, '
 $router->post('/admin/miembros', authMiddleware(MiembroController::class, 'store'));
 $router->post('/admin/miembros/update', authMiddleware(MiembroController::class, 'update'));
 $router->post('/admin/miembros/delete', authMiddleware(MiembroController::class, 'destroy'));
+
+$router->post('/admin/innovaciones', authMiddleware(ArchivoController::class, 'store'));
+$router->post('/admin/innovaciones/update', authMiddleware(ArchivoController::class, 'update'));
+$router->post('/admin/innovaciones/delete', authMiddleware(ArchivoController::class, 'destroy'));

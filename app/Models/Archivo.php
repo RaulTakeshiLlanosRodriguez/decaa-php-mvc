@@ -16,7 +16,7 @@ class Archivo
     {
         $pdo = Conexion::conectar();
         if ($this->id) {
-            $stmt = $pdo->prepare("UPDATE archivos SET descripcion = ?, enlace = ?, ruta = ? WHERE id = ?");
+            $stmt = $pdo->prepare("UPDATE archivos SET descripcion = ?, enlace = ?, ruta_archivo = ? WHERE id = ?");
             return $stmt->execute([
                 $this->descripcion,
                 $this->enlace,
@@ -24,7 +24,7 @@ class Archivo
                 $this->id
             ]);
         } else {
-            $stmt = $pdo->prepare("INSERT INTO archivos (descripcion, enlace, ruta) VALUES (?, ?, ?)");
+            $stmt = $pdo->prepare("INSERT INTO archivos (descripcion, enlace, ruta_archivo) VALUES (?, ?, ?)");
             return $stmt->execute([
                 $this->descripcion,
                 $this->enlace,
