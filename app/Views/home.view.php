@@ -3,7 +3,7 @@
     <h3>Últimas Publicaciones</h3>
 
     <div class="noticia">
-        <img src="https://paproviders.org/wp-content/uploads/2015/09/Committee-Meeting-Round-Table.jpg"
+        <img src="<?=BASE_URL?>/assets/foto2.jpg"
             alt="Comités de Calidad">
         <div class="contenido">
             <h4>Se conforman nuevos comités de calidad</h4>

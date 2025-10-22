@@ -61,9 +61,9 @@
     <section class="slider-solo-imagenes">
         <div class="slider-track">
             <img src="<?=BASE_URL?>/assets/foto1.jpg" alt="foto 1">
-            <img src="https://paproviders.org/wp-content/uploads/2015/09/Committee-Meeting-Round-Table.jpg"
+            <img src="<?=BASE_URL?>/assets/foto2.jpg"
                 alt="foto 2">
-            <img src="https://www.syu.ac.kr/eng/wp-content/uploads/sites/81/2023/08/1.-Sahmyook-Universitys-International-Academic-Conference-%E2%80%982023-ICISAA-completed-1-scaled.jpg"
-                alt="foto 3">
+            <img src="<?=BASE_URL?>/assets/foto3.jpeg"
+                alt="foto 3">     
         </div>
     </section>
