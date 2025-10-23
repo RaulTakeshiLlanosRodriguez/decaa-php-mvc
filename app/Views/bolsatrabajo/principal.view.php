@@ -12,6 +12,26 @@
 </head>
 
 <body>
+    <header class="header">
+        <div class="logo-area">
+            <img src="<?= BASE_URL ?>/assets/logo-uns.png" alt="Logo UNS">
+            <div class="office-name">
+                BOLSA LABORAL UNS
+            </div>
+        </div>
+        <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
+        <nav class="main-nav" id="main-nav">
+            <ul class="nav-menu">
+                <li class="has-submenu"><a href="<?= BASE_URL ?>/bolsatrabajo">INICIO</a></li>
+                <li class="has-submenu">
+                    <a href="#">NOSOTROS</a>
+                    <ul class="submenu">
+                        <li><a href="<?= BASE_URL ?>/bolsatrabajo/mision">Acerca de</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
     <section class="container py-5 text-center">
         <h2 class="text-danger fw-bold mb-5">BOLSA LABORAL</h2>
         <div class="row justify-content-center align-items-stretch g-4">
