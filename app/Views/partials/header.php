@@ -60,7 +60,7 @@
 
     <section class="slider-solo-imagenes">
         <div class="slider-track">
-            <img src="<?=BASE_URL?>/assets/foto1.jpg" alt="foto 1">
+            <img src="<?=BASE_URL?>/assets/foto4.jpeg" alt="foto 1">
             <img src="<?=BASE_URL?>/assets/foto2.jpg"
                 alt="foto 2">
             <img src="<?=BASE_URL?>/assets/foto3.jpeg"
