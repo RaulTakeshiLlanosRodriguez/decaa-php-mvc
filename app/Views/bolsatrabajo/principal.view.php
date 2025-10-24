@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BOLSA DE TRABAJO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="shortcut icon" href="<?= BASE_URL ?>/assets/logo-favicon-uns.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/css/styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo-area">
+            <img src="<?= BASE_URL ?>/assets/logo-uns.png" alt="Logo UNS">
+            <div class="office-name">
+                BOLSA LABORAL UNS
+            </div>
+        </div>
+        <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
+        <nav class="main-nav" id="main-nav">
+            <ul class="nav-menu">
+                <li class="has-submenu"><a href="<?= BASE_URL ?>/bolsatrabajo">INICIO</a></li>
+                <li class="has-submenu">
+                    <a href="#">NOSOTROS</a>
+                    <ul class="submenu">
+                        <li><a href="<?= BASE_URL ?>/bolsatrabajo/mision">Acerca de</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="container py-5 text-center">
+        <h2 class="text-danger fw-bold mb-5">BOLSA LABORAL</h2>
+        <div class="row justify-content-center align-items-stretch g-4">
+            <!-- Estudiantes y Egresados -->
+            <div class="col-md-5">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="position-absolute bg-danger text-white px-3 py-1 rounded-top start-0 top-0 fs-6">
+                        Estudiantes y Egresados
+                    </div>
+                    <img src="<?= BASE_URL ?>/assets/bolsa-estudiantes.jpg" class="card-img-top" alt="Oportunidades laborales">
+                    <div class="card-body">
+                        <h5 class="card-title">Oportunidades laborales</h5>
+                        <a href="<?= BASE_URL ?>/bolsatrabajo/postulacion-estudiante" class="btn btn-outline-danger px-4">Postular</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empresas e Instituciones -->
+            <div class="col-md-5">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="position-absolute bg-danger text-white px-3 py-1 rounded-top start-0 top-0 fs-6">
+                        Empresas e Instituciones
+                    </div>
+                    <img src="<?= BASE_URL ?>/assets/bolsa-empresas.jpg" class="card-img-top" alt="Convocatorias">
+                    <div class="card-body">
+                        <h5 class="card-title">Convocatorias</h5>
+                        <a href="#" class="btn btn-outline-danger px-4">Publicar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>

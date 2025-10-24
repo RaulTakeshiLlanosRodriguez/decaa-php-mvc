@@ -15,6 +15,8 @@ $router->get('/ogc', [HomeController::class, 'ogc']);
 $router->get('/olic', [HomeController::class, 'olic']);
 $router->get('/oaac', [HomeController::class, 'oaac']);
 $router->get('/acreditacion', [HomeController::class, 'acreditacion']);
+$router->get('/bolsatrabajo', [HomeController::class, 'bolsatrabajo']);
+$router->get('/bolsatrabajo/postulacion-estudiante', [HomeController::class, 'postulacionestudiante']);
 
 $router->get('/login', [AuthController::class, 'showLoginForm']);
 $router->post('/login', [AuthController::class, 'login']);
