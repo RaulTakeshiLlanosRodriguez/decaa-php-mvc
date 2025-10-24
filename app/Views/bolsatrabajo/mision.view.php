@@ -1,3 +1,8 @@
+
+<?php
+ini_set('display_errors', 1);
+define('BASE_URL', '/decaa-php-mvc');
+?>
 <?php
   $tituloPagina = $tituloPagina ?? 'Misión y Visión';
   $mision = $mision ?? 'La Bolsa Laboral UNS conecta a estudiantes y
@@ -51,7 +56,7 @@
     <!-- Misión -->
     <section class="mv-section mv-mision">
       <div class="mv-image">
-        <img src="<?=BASE_URL?>/assets/img-mision" alt="Imagen Misión">
+        <img src="<?=BASE_URL?>/assets/img-mision.png" alt="Imagen Misión">
       </div>
       <div class="mv-text">
         <h2><i class="fa-solid fa-bullseye"></i>Misión</h2>
@@ -63,7 +68,7 @@
     <!-- Visión -->
     <section class="mv-section mv-vision">
       <div class="mv-image">
-        <img src="https://us.123rf.com/450wm/nicolasmenijes/nicolasmenijes1505/nicolasmenijes150500255/40057609-3d-renderer-image-white-people-looking-through-binoculars-isolated-white-background.jpg" alt="Imagen Visión">
+        <img src="<?=BASE_URL?>/assets/img-vision.png" alt="Imagen Visión">
       </div>
       <div class="mv-text">
         <h2><i class="fa-solid fa-eye"></i> Nuestra Visión</h2>
