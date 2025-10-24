@@ -26,4 +26,8 @@ class HomeController{
     public function acreditacion(){
         require_once __DIR__ . '/../Views/acreditacion.view.php';
     }
+
+    public function bolsatrabajomision(){
+        require_once __DIR__ . '/../Views/bolsatrabajo/mision.view.php';
+    }
 }
