@@ -25,7 +25,7 @@
                 <img src="<?= BASE_URL ?>/assets/bolsa-empresas.jpg" class="card-img-top" alt="Convocatorias">
                 <div class="card-body">
                     <h5 class="card-title">Convocatorias</h5>
-                    <a href="#" class="btn btn-outline-danger px-4">Publicar</a>
+                    <a href="<?= BASE_URL ?>/bolsatrabajo/empresas" class="btn btn-outline-danger px-4">Publicar</a>
                 </div>
             </div>
         </div>

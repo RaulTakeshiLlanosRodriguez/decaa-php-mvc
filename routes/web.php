@@ -18,6 +18,9 @@ $router->get('/acreditacion', [HomeController::class, 'acreditacion']);
 $router->get('/bolsatrabajo/mision', [HomeController::class, 'bolsatrabajomision']);
 $router->get('/bolsatrabajo', [HomeController::class, 'bolsatrabajo']);
 $router->get('/bolsatrabajo/postulacion-estudiante', [HomeController::class, 'postulacionestudiante']);
+$router->get('/bolsatrabajo/login', [AuthController::class, 'showLoginFormBolsaTrabajo']);
+$router->post('/bolsatrabajo/login', [AuthController::class, 'bolsatrabajoLogin']);
+$router->get('/bolsatrabajo/empresas', authMiddlewareBolsaTrabajo(AdminController::class, 'publications'));
 
 $router->get('/login', [AuthController::class, 'showLoginForm']);
 $router->post('/login', [AuthController::class, 'login']);
