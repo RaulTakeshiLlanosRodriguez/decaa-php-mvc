@@ -1,7 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("menu-toggle").addEventListener("click", function () {
-    document.getElementById("main-nav").classList.toggle("activo");
-  });
+import { initMenu } from "./menu.js";
+
+function buscarPorRegion(){
   document.getElementById("btnBuscar").addEventListener("click", function () {
     const carrera = document.getElementById("inputCarrera").value.toLowerCase();
     const region = document.getElementById("selectRegion").value.toLowerCase();
@@ -16,4 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+}
+document.addEventListener("DOMContentLoaded", () => {
+  initMenu();
+  buscarPorRegion();
 });
+
+
