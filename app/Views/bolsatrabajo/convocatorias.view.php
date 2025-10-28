@@ -20,6 +20,12 @@
             <a href="<?= BASE_URL ?>/bolsatrabajo/login" class="btn btn-outline-danger">Iniciar Sesión</a>
         <?php endif; ?>
     </div>
+    <?php if (!empty($_SESSION['mensaje'])): ?>
+        <div class="alert alert-success mt-3">
+            <?= $_SESSION['mensaje'] ?>
+        </div>
+        <?php unset($_SESSION['mensaje']); ?>
+    <?php endif; ?>
 
     <div class="row" id="contenedorConvocatorias">
         <?php foreach ($convocatorias as $item): ?>
@@ -27,14 +33,17 @@
                 <div class="card h-100 shadow-sm">
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-2">
-                            <img src="<?= $item['logo'] ?>" alt="Logo" style="height:40px; margin-right:10px;">
+                            <img src="<?= BASE_URL . '/'. $item['logo'] ?>" alt="Logo" style="height:40px; margin-right:10px;">
                             <h6 class="m-0"><?= $item['institucion'] ?></h6>
                         </div>
                         <p class="mb-1"><strong><?= $item['plazas'] ?></strong> plazas | Contrato "<strong><?= $item['tipo_contrato'] ?></strong>"</p>
                         <p class="mb-1 text-danger"><i class="fas fa-calendar-alt"></i> Vigente hasta el <?= $item['vigencia'] ?></p>
                         <p class="mb-1"><i class="fas fa-map-marker-alt"></i> <?= $item['region'] ?></p>
                         <p class="mb-3"><i class="fas fa-money-bill-wave"></i> <?= $item['sueldo'] ?></p>
-                        <a href="<?= BASE_URL ?>/bolsatrabajo/postular/<?= $item['id'] ?>" class="btn btn-outline-danger btn-sm w-100">POSTULAR</a>
+                        <form action="<?= BASE_URL ?>/bolsatrabajo/postular" method="POST">
+                            <input type="hidden" name="convocatoria_id" value="<?= $item['id'] ?>">
+                            <button type="submit" class="btn btn-outline-danger btn-sm w-100">POSTULAR</button>
+                        </form>
                     </div>
                     <div class="card-footer d-flex justify-content-center">
                         <span class="me-2">Compartir en:</span>
@@ -43,6 +52,12 @@
                         <i class="fab fa-twitter mx-1"></i>
                         <i class="fab fa-whatsapp mx-1"></i>
                     </div>
+                    <?php if (!empty($_SESSION['error'])): ?>
+                        <div class="alert alert-danger mt-3">
+                            <?= $_SESSION['error'] ?>
+                        </div>
+                    <?php unset($_SESSION['error']);
+                    endif; ?>
                 </div>
             </div>
         <?php endforeach; ?>

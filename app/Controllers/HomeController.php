@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\Convocatoria;
+use App\Models\Postulacion;
 use App\Models\Region;
 
 class HomeController
@@ -46,68 +48,7 @@ class HomeController
     }
     public function postulacionestudiante()
     {
-        $convocatorias = [
-            [
-                'id' => 1,
-                'institucion' => 'MUNICIPALIDAD DE JEPELACIO',
-                'plazas' => 5,
-                'tipo_contrato' => 'CAS',
-                'vigencia' => '26/09/2025',
-                'region' => 'San Martín',
-                'sueldo' => 'S/. 1500 y S/. 3000 Soles',
-                'logo' => BASE_URL . '/assets/DECAA organigrama.png'
-            ],
-            [
-                'id' => 2,
-                'institucion' => 'PRONABEC',
-                'plazas' => 1,
-                'tipo_contrato' => 'CAS',
-                'vigencia' => '26/09/2025',
-                'region' => 'Lima',
-                'sueldo' => 'S/. 3500 Soles',
-                'logo' => BASE_URL . '/assets/DECAA organigrama.png'
-            ],
-            [
-                'id' => 3,
-                'institucion' => 'SINEACE',
-                'plazas' => 1,
-                'tipo_contrato' => 'CAS',
-                'vigencia' => '26/12/2025',
-                'region' => 'Lima',
-                'sueldo' => 'S/. 4000 Soles',
-                'logo' => BASE_URL . '/assets/DECAA organigrama.png'
-            ],
-            [
-                'id' => 4,
-                'institucion' => 'PODER JUDICIAL',
-                'plazas' => 1,
-                'tipo_contrato' => 'CAS',
-                'vigencia' => '16/12/2025',
-                'region' => 'Ancash',
-                'sueldo' => 'S/. 2000 Soles',
-                'logo' => BASE_URL . '/assets/DECAA organigrama.png'
-            ],
-            [
-                'id' => 5,
-                'institucion' => 'TIENDAS EFE',
-                'plazas' => 1,
-                'tipo_contrato' => 'Planilla',
-                'vigencia' => '20/12/2025',
-                'region' => 'Ancash',
-                'sueldo' => 'S/. 1400 Soles',
-                'logo' => BASE_URL . '/assets/DECAA organigrama.png'
-            ],
-            [
-                'id' => 6,
-                'institucion' => 'BCP',
-                'plazas' => 1,
-                'tipo_contrato' => 'RXH',
-                'vigencia' => '12/12/2025',
-                'region' => 'Ancash',
-                'sueldo' => 'S/. 2200 Soles',
-                'logo' => BASE_URL . '/assets/DECAA organigrama.png'
-            ],
-        ];
+        $convocatorias = Convocatoria::all();
 
         $regiones = Region::all();
 
