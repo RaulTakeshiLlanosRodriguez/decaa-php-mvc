@@ -8,9 +8,17 @@
             <option>Todo el país</option>
             <?php foreach ($regiones as $region): ?>
                 <option><?= $region['nombre'] ?></option>
-            <?php endforeach; ?>  
+            <?php endforeach; ?>
         </select>
         <button class="btn btn-danger ms-2 px-4" id="btnBuscar">Buscar</button>
+    </div>
+    <div class="filtro-container d-flex justify-content-start my-4">
+        <?php if (estaAutenticado()): ?>
+            <a href="<?= BASE_URL ?>/bolsatrabajo/mis-postulaciones" class="btn btn-outline-primary me-2">Mis Postulaciones</a>
+            <a href="<?= BASE_URL ?>/bolsatrabajo/logout" class="btn btn-outline-danger">Cerrar Sesión</a>
+        <?php else: ?>
+            <a href="<?= BASE_URL ?>/bolsatrabajo/login" class="btn btn-outline-danger">Iniciar Sesión</a>
+        <?php endif; ?>
     </div>
 
     <div class="row" id="contenedorConvocatorias">
@@ -26,7 +34,7 @@
                         <p class="mb-1 text-danger"><i class="fas fa-calendar-alt"></i> Vigente hasta el <?= $item['vigencia'] ?></p>
                         <p class="mb-1"><i class="fas fa-map-marker-alt"></i> <?= $item['region'] ?></p>
                         <p class="mb-3"><i class="fas fa-money-bill-wave"></i> <?= $item['sueldo'] ?></p>
-                        <a href="#" class="btn btn-outline-danger btn-sm w-100">POSTULAR</a>
+                        <a href="<?= BASE_URL ?>/bolsatrabajo/postular/<?= $item['id'] ?>" class="btn btn-outline-danger btn-sm w-100">POSTULAR</a>
                     </div>
                     <div class="card-footer d-flex justify-content-center">
                         <span class="me-2">Compartir en:</span>

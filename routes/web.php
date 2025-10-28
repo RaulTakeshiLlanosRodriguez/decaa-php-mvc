@@ -24,7 +24,9 @@ $router->post('/bolsatrabajo/login', [AuthController::class, 'bolsatrabajoLogin'
 $router->get('/bolsatrabajo/empresas', authMiddlewareBolsaTrabajo(ConvocatoriaController::class, 'showConvocatoriaEmpresaForm'));
 $router->get('/bolsatrabajo/registro', [AuthController::class, 'showRegistroFormBolsaTrabajo']);
 $router->post('/bolsatrabajo/registro', [AuthController::class, 'registro']);
-$router->get('bolsatrabajo/logout', [AuthController::class, 'logoutBolsaTrabajo']);
+$router->get('/bolsatrabajo/logout', [AuthController::class, 'logoutBolsaTrabajo']);
+$router->get('/bolsatrabajo/postular/{convocatoriaId}', [ConvocatoriaController::class, 'postular']);
+
 
 
 

@@ -59,7 +59,7 @@ class AuthController{
 
         if ($usuario) {
             $_SESSION['usuario'] = $usuario;
-             $_SESSION['usuario_id'] = $usuario['id'];
+            $_SESSION['usuario_id'] = $_SESSION['usuario']['id'];
 
             if ($_SESSION['usuario']['tipo'] == 1) {
                 header('Location: ' . BASE_URL . '/bolsatrabajo/empresas');

@@ -48,6 +48,7 @@ class HomeController
     {
         $convocatorias = [
             [
+                'id' => 1,
                 'institucion' => 'MUNICIPALIDAD DE JEPELACIO',
                 'plazas' => 5,
                 'tipo_contrato' => 'CAS',
@@ -57,6 +58,7 @@ class HomeController
                 'logo' => BASE_URL . '/assets/DECAA organigrama.png'
             ],
             [
+                'id' => 2,
                 'institucion' => 'PRONABEC',
                 'plazas' => 1,
                 'tipo_contrato' => 'CAS',
@@ -66,6 +68,7 @@ class HomeController
                 'logo' => BASE_URL . '/assets/DECAA organigrama.png'
             ],
             [
+                'id' => 3,
                 'institucion' => 'SINEACE',
                 'plazas' => 1,
                 'tipo_contrato' => 'CAS',
@@ -75,6 +78,7 @@ class HomeController
                 'logo' => BASE_URL . '/assets/DECAA organigrama.png'
             ],
             [
+                'id' => 4,
                 'institucion' => 'PODER JUDICIAL',
                 'plazas' => 1,
                 'tipo_contrato' => 'CAS',
@@ -84,6 +88,7 @@ class HomeController
                 'logo' => BASE_URL . '/assets/DECAA organigrama.png'
             ],
             [
+                'id' => 5,
                 'institucion' => 'TIENDAS EFE',
                 'plazas' => 1,
                 'tipo_contrato' => 'Planilla',
@@ -93,6 +98,7 @@ class HomeController
                 'logo' => BASE_URL . '/assets/DECAA organigrama.png'
             ],
             [
+                'id' => 6,
                 'institucion' => 'BCP',
                 'plazas' => 1,
                 'tipo_contrato' => 'RXH',
