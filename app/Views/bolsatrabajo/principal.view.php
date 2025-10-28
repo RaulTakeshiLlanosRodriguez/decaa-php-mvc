@@ -11,7 +11,7 @@
                 <img src="<?= BASE_URL ?>/assets/bolsa-estudiantes.jpg" class="card-img-top" alt="Oportunidades laborales">
                 <div class="card-body">
                     <h5 class="card-title">Oportunidades laborales</h5>
-                    <a href="<?= BASE_URL ?>/bolsatrabajo/postulacion-estudiante" class="btn btn-outline-danger px-4">Postular</a>
+                    <a href="<?= BASE_URL ?>/bolsatrabajo/postulacion-estudiante" class="btn btn-outline-danger px-4">Ver Convocatorias</a>
                 </div>
             </div>
         </div>

@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\Region;
+
 class HomeController
 {
 
@@ -77,7 +79,7 @@ class HomeController
                 'plazas' => 1,
                 'tipo_contrato' => 'CAS',
                 'vigencia' => '16/12/2025',
-                'region' => 'Áncash',
+                'region' => 'Ancash',
                 'sueldo' => 'S/. 2000 Soles',
                 'logo' => BASE_URL . '/assets/DECAA organigrama.png'
             ],
@@ -86,7 +88,7 @@ class HomeController
                 'plazas' => 1,
                 'tipo_contrato' => 'Planilla',
                 'vigencia' => '20/12/2025',
-                'region' => 'Áncash',
+                'region' => 'Ancash',
                 'sueldo' => 'S/. 1400 Soles',
                 'logo' => BASE_URL . '/assets/DECAA organigrama.png'
             ],
@@ -95,12 +97,14 @@ class HomeController
                 'plazas' => 1,
                 'tipo_contrato' => 'RXH',
                 'vigencia' => '12/12/2025',
-                'region' => 'Áncash',
+                'region' => 'Ancash',
                 'sueldo' => 'S/. 2200 Soles',
                 'logo' => BASE_URL . '/assets/DECAA organigrama.png'
             ],
         ];
 
-        require_once __DIR__ . '/../Views/bolsatrabajo/postulacion-estudiantes.view.php';
+        $regiones = Region::all();
+
+        require_once __DIR__ . '/../Views/bolsatrabajo/convocatorias.view.php';
     }
 }

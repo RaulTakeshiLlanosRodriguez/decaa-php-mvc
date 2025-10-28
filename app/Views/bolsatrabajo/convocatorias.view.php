@@ -6,13 +6,9 @@
         <input type="text" class="form-control w-50 me-3" placeholder="Escribe tu carrera: Derecho, Ingeniería" id="inputCarrera">
         <select class="form-select w-25" id="selectRegion">
             <option>Todo el país</option>
-            <option>Amazonas</option>
-            <option>Áncash</option>
-            <option>Apurímac</option>
-            <option>Arequipa</option>
-            <option>Ayacucho</option>
-            <option>Cusco</option>
-            <option>Lima</option>
+            <?php foreach ($regiones as $region): ?>
+                <option><?= $region['nombre'] ?></option>
+            <?php endforeach; ?>  
         </select>
         <button class="btn btn-danger ms-2 px-4" id="btnBuscar">Buscar</button>
     </div>
@@ -30,7 +26,7 @@
                         <p class="mb-1 text-danger"><i class="fas fa-calendar-alt"></i> Vigente hasta el <?= $item['vigencia'] ?></p>
                         <p class="mb-1"><i class="fas fa-map-marker-alt"></i> <?= $item['region'] ?></p>
                         <p class="mb-3"><i class="fas fa-money-bill-wave"></i> <?= $item['sueldo'] ?></p>
-                        <a href="#" class="btn btn-outline-danger btn-sm w-100">VER CONVOCATORIA</a>
+                        <a href="#" class="btn btn-outline-danger btn-sm w-100">POSTULAR</a>
                     </div>
                     <div class="card-footer d-flex justify-content-center">
                         <span class="me-2">Compartir en:</span>

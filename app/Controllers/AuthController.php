@@ -14,15 +14,20 @@ class AuthController{
         require_once __DIR__ . '/../Views/bolsatrabajo/login.view.php'; 
     }
 
+    public function showRegistroFormBolsaTrabajo(){
+        require_once __DIR__ . '/../Views/bolsatrabajo/registro.view.php'; 
+    }
+
     public function registro()
     {
-
+        
+        $name = $_POST['nombre'];
         $email = $_POST['email'];
         $password = $_POST['password'];
         $tipo = $_POST['tipo'];
 
         $usuario = new Usuario();
-        $usuario->create($email, $password, $tipo);
+        $usuario->create($name, $email, $password, $tipo);
 
         $_SESSION['mensaje'] = 'Usuario registrado correctamente';
         header('Location: ' . BASE_URL . '/bolsatrabajo/login');
@@ -56,9 +61,9 @@ class AuthController{
             $_SESSION['usuario'] = $usuario;
 
             if ($_SESSION['usuario']['tipo'] == 1) {
-                header('Location: ' . BASE_URL . '/bolsatrabajo/empresa/convocatorias');
+                header('Location: ' . BASE_URL . '/bolsatrabajo/empresas');
             } else {
-                header('Location: ' . BASE_URL . '/bolsatrabajo/estudiante/convocatorias');
+                header('Location: ' . BASE_URL . '/bolsatrabajo/estudiante');
             }
 
             exit;
@@ -72,6 +77,12 @@ class AuthController{
     public function logout() {
         session_destroy();
         header('Location: ' . BASE_URL . '/login');
+        exit;
+    }
+
+    public function logoutBolsaTrabajo() {
+        session_destroy();
+        header('Location: ' . BASE_URL . '/bolsatrabajo');
         exit;
     }
 }

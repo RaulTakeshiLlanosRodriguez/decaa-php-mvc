@@ -4,6 +4,7 @@ use App\Controllers\AdminController;
 use App\Controllers\ArchivoController;
 use App\Controllers\AuthController;
 use App\Controllers\ComiteController;
+use App\Controllers\ConvocatoriaController;
 use App\Controllers\HomeController;
 use App\Controllers\IndicadorController;
 use App\Controllers\MiembroController;
@@ -20,7 +21,12 @@ $router->get('/bolsatrabajo', [HomeController::class, 'bolsatrabajo']);
 $router->get('/bolsatrabajo/postulacion-estudiante', [HomeController::class, 'postulacionestudiante']);
 $router->get('/bolsatrabajo/login', [AuthController::class, 'showLoginFormBolsaTrabajo']);
 $router->post('/bolsatrabajo/login', [AuthController::class, 'bolsatrabajoLogin']);
-$router->get('/bolsatrabajo/empresas', authMiddlewareBolsaTrabajo(AdminController::class, 'publications'));
+$router->get('/bolsatrabajo/empresas', authMiddlewareBolsaTrabajo(ConvocatoriaController::class, 'showConvocatoriaEmpresaForm'));
+$router->get('/bolsatrabajo/registro', [AuthController::class, 'showRegistroFormBolsaTrabajo']);
+$router->post('/bolsatrabajo/registro', [AuthController::class, 'registro']);
+$router->get('bolsatrabajo/logout', [AuthController::class, 'logoutBolsaTrabajo']);
+
+
 
 $router->get('/login', [AuthController::class, 'showLoginForm']);
 $router->post('/login', [AuthController::class, 'login']);
