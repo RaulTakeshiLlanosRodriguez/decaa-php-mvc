@@ -8,6 +8,7 @@ use App\Controllers\ConvocatoriaController;
 use App\Controllers\HomeController;
 use App\Controllers\IndicadorController;
 use App\Controllers\MiembroController;
+use App\Controllers\PostulacionController;
 use App\Controllers\PublicacionController;
 
 $router->get('/nosotros', [HomeController::class, 'decaa']);
@@ -26,9 +27,10 @@ $router->get('/bolsatrabajo/registro', [AuthController::class, 'showRegistroForm
 $router->post('/bolsatrabajo/registro', [AuthController::class, 'registro']);
 $router->get('/bolsatrabajo/logout', [AuthController::class, 'logoutBolsaTrabajo']);
 $router->post('/bolsatrabajo/postular', [ConvocatoriaController::class, 'postular']);
-
-
-
+$router->get('/bolsatrabajo/mis-postulaciones', [PostulacionController::class, 'showPostulacionesForm']);
+$router->post('/bolsatrabajo/empresas', [ConvocatoriaController::class, 'create']);
+$router->post('/bolsatrabajo/empresas/update', [ConvocatoriaController::class, 'update']);
+$router->post('/bolsatrabajo/empresas/delete', [ConvocatoriaController::class, 'destroy']);
 
 $router->get('/login', [AuthController::class, 'showLoginForm']);
 $router->post('/login', [AuthController::class, 'login']);

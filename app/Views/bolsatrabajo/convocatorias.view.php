@@ -26,6 +26,12 @@
         </div>
         <?php unset($_SESSION['mensaje']); ?>
     <?php endif; ?>
+    <?php if (!empty($_SESSION['error'])): ?>
+        <div class="alert alert-danger mt-3">
+            <?= $_SESSION['error'] ?>
+        </div>
+    <?php unset($_SESSION['error']);
+    endif; ?>
 
     <div class="row" id="contenedorConvocatorias">
         <?php foreach ($convocatorias as $item): ?>
@@ -33,7 +39,7 @@
                 <div class="card h-100 shadow-sm">
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-2">
-                            <img src="<?= BASE_URL . '/'. $item['logo'] ?>" alt="Logo" style="height:40px; margin-right:10px;">
+                            <img src="<?= BASE_URL . '/' . $item['logo'] ?>" alt="Logo" style="height:40px; margin-right:10px;">
                             <h6 class="m-0"><?= $item['institucion'] ?></h6>
                         </div>
                         <p class="mb-1"><strong><?= $item['plazas'] ?></strong> plazas | Contrato "<strong><?= $item['tipo_contrato'] ?></strong>"</p>
@@ -52,12 +58,6 @@
                         <i class="fab fa-twitter mx-1"></i>
                         <i class="fab fa-whatsapp mx-1"></i>
                     </div>
-                    <?php if (!empty($_SESSION['error'])): ?>
-                        <div class="alert alert-danger mt-3">
-                            <?= $_SESSION['error'] ?>
-                        </div>
-                    <?php unset($_SESSION['error']);
-                    endif; ?>
                 </div>
             </div>
         <?php endforeach; ?>
