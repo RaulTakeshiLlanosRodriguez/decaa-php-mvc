@@ -35,7 +35,7 @@
                 <div class="modal fade" id="modalEditar<?= $convocatoria['id'] ?>" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <form action="<?= BASE_URL ?>/bolsatrabajo/empresas/update" method="POST">
+                            <form action="<?= BASE_URL ?>/bolsatrabajo/empresas/update" method="POST" enctype="multipart/form-data">
                                 <input type="hidden" name="id" value="<?= $convocatoria['id'] ?>">
                                 <div class="modal-header">
                                     <h5 class="modal-title">Editar Convocatoria</h5>
@@ -98,7 +98,7 @@
 <div class="modal fade" id="modalAgregar" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="<?= BASE_URL ?>/bolsatrabajo/empresas" method="POST">
+            <form action="<?= BASE_URL ?>/bolsatrabajo/empresas" method="POST" enctype="multipart/form-data">
                 <div class="modal-header">
                     <h5 class="modal-title">Agregar Convocatoria</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
@@ -134,7 +134,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Logo</label>
-                        <input type="file" name="logo" class="form-control" accept=".jpg,.jpeg,.png,.webp,image/*">
+                        <input type="file" name="logo" class="form-control" accept=".jpg,.jpeg,.png,.webp,image/*" required>
                     </div>
                 </div>
                 <div class="modal-footer">

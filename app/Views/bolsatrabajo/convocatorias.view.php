@@ -39,7 +39,7 @@
                 <div class="card h-100 shadow-sm">
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-2">
-                            <img src="<?= BASE_URL . '/' . $item['logo'] ?>" alt="Logo" style="height:40px; margin-right:10px;">
+                            <img src="<?= BASE_URL . '/public/' . $item['logo'] ?>" alt="Logo" style="height:40px; margin-right:10px;">
                             <h6 class="m-0"><?= $item['institucion'] ?></h6>
                         </div>
                         <p class="mb-1"><strong><?= $item['plazas'] ?></strong> plazas | Contrato "<strong><?= $item['tipo_contrato'] ?></strong>"</p>
