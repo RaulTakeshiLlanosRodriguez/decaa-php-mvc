@@ -16,4 +16,11 @@ class Usuario{
         }
         return false;
     }
+
+    public function create($name, $email, $password, $tipo)
+    {
+        $pdo = Conexion::conectar();
+        $stmt = $pdo->prepare("INSERT INTO users (name, email, password, tipo) VALUES (?, ?, ?, ?)");
+        return $stmt->execute([$name, $email, password_hash($password, PASSWORD_DEFAULT), $tipo]);
+    }
 }
