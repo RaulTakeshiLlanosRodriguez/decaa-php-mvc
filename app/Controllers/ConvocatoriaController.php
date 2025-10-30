@@ -43,14 +43,52 @@ class ConvocatoriaController
         }
 
 
-        $postulacion = new Postulacion();
+        /*$postulacion = new Postulacion();
         $postulacion->usuario_id = $usuarioId;
         $postulacion->convocatoria_id = $convocatoriaId;
         $postulacion->save();
         $_SESSION['mensaje'] = "Te has postulado exitosamente.";
+        header('Location: ' . BASE_URL . '/bolsatrabajo/postulacion-estudiante');*/
+        header('Location: ' . BASE_URL . '/bolsatrabajo/confirmar-postulacion?id=' . $convocatoriaId);
+        exit;
+    }
+
+    public function guardarPostulacion()
+    {
+        if (!estaAutenticado()) {
+            $_SESSION['error'] = "Debes iniciar sesión para postularte.";
+            header('Location: ' . BASE_URL . '/bolsatrabajo/login');
+            exit;
+        }
+
+        $convocatoriaId = $_POST['convocatoria_id'] ?? null;
+        $usuarioId = $_SESSION['usuario_id'];
+
+        /*if (!$convocatoriaId) {
+            $_SESSION['error'] = "Convocatoria no válida.";
+            header('Location: ' . BASE_URL . '/bolsatrabajo');
+            exit;
+        }
+
+        if (Postulacion::yaPostulo($usuarioId, $convocatoriaId)) {
+            $_SESSION['error'] = "Ya te has postulado a esta convocatoria.";
+            header('Location: ' . BASE_URL . '/bolsatrabajo/postulacion-estudiante');
+            exit;
+        }*/
+
+        $postulacion = new Postulacion();
+        $postulacion->usuario_id = $usuarioId;
+        $postulacion->convocatoria_id = $convocatoriaId;
+
+        if ($postulacion->save()) {
+            $_SESSION['mensaje'] = "Tu postulación fue registrada correctamente.";
+            $_SESSION['tipo'] = 'success';
+        }
+
         header('Location: ' . BASE_URL . '/bolsatrabajo/postulacion-estudiante');
         exit;
     }
+
 
     public function create()
     {

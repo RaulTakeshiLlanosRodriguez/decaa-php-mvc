@@ -43,6 +43,11 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="mb-3">
+                                        <label class="form-label">Descripción</label>
+                                        <textarea name="descripcion" class="form-control" rows="3"
+                                            placeholder="Escribe una breve descripción..."><?= htmlspecialchars($convocatoria['descripcion'] ?? '') ?></textarea>
+                                    </div>
+                                    <div class="mb-3">
                                         <label class="form-label">Institución</label>
                                         <input type="text" name="institucion" class="form-control"
                                             value="<?= htmlspecialchars($convocatoria['institucion']) ?>" required>
@@ -104,6 +109,11 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Descripción</label>
+                        <textarea name="descripcion" class="form-control" rows="3"
+                            placeholder="Escribe una breve descripción..."></textarea>
+                    </div>
                     <div class="mb-3">
                         <label class="form-label">Institución</label>
                         <input type="text" name="institucion" class="form-control" required>

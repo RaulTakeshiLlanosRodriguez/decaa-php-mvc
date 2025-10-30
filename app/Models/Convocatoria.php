@@ -56,9 +56,9 @@ class Convocatoria
         $pdo = Conexion::conectar();
         $stmt = $pdo->prepare("
             INSERT INTO convocatorias 
-                (institucion, plazas, tipo_contrato, vigencia, region_id, sueldo, logo, usuario_id)
+                (institucion, plazas, tipo_contrato, vigencia, region_id, sueldo, logo, usuario_id, descripcion)
             VALUES 
-                (:institucion, :plazas, :tipo_contrato, :vigencia, :region_id, :sueldo, :logo, :usuario_id)
+                (:institucion, :plazas, :tipo_contrato, :vigencia, :region_id, :sueldo, :logo, :usuario_id, :descripcion)
         ");
         return $stmt->execute([
             'institucion' => $data['institucion'],
@@ -68,7 +68,8 @@ class Convocatoria
             'region_id' => $data['region_id'],
             'sueldo' => $data['sueldo'],
             'logo' => $data['logo'],
-            'usuario_id' => $data['usuario_id']
+            'usuario_id' => $data['usuario_id'],
+            'descripcion' => $data['descripcion']
         ]);
     }
 
@@ -84,7 +85,8 @@ class Convocatoria
                 vigencia = :vigencia,
                 region_id = :region_id,
                 sueldo = :sueldo,
-                logo = :logo
+                logo = :logo,
+                descripcion = :descripcion
             WHERE id = :id
         ");
         return $stmt->execute([
@@ -95,6 +97,7 @@ class Convocatoria
             'region_id' => $data['region_id'],
             'sueldo' => $data['sueldo'],
             'logo' => $data['logo'],
+            'descripcion' => $data['descripcion'],
             'id' => $id
         ]);
     }
@@ -105,4 +108,6 @@ class Convocatoria
         $stmt = $pdo->prepare("DELETE FROM convocatorias WHERE id = ?");
         return $stmt->execute([$id]);
     }
+
+
 }

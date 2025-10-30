@@ -27,7 +27,7 @@
                     <?php foreach ($postulaciones as $item): ?>
                         <tr>
                             <td>
-                                <img src="<?= BASE_URL . '/' . $item['logo'] ?>" alt="Logo" style="height:30px; margin-right:8px;">
+                                <img src="<?= BASE_URL . '/public/' . $item['logo'] ?>" alt="Logo" style="height:30px; margin-right:8px;">
                                 <?= htmlspecialchars($item['institucion']) ?>
                             </td>
                             <td><?= $item['tipo_contrato'] ?></td>
