@@ -31,6 +31,8 @@ $router->get('/bolsatrabajo/mis-postulaciones', [PostulacionController::class, '
 $router->post('/bolsatrabajo/empresas', [ConvocatoriaController::class, 'create']);
 $router->post('/bolsatrabajo/empresas/update', [ConvocatoriaController::class, 'update']);
 $router->post('/bolsatrabajo/empresas/delete', [ConvocatoriaController::class, 'destroy']);
+$router->get('/bolsatrabajo/postulacion', [ConvocatoriaController::class, 'showConvocatoriaIdForm']);
+$router->post('/bolsatrabajo/postulacion', [ConvocatoriaController::class, 'guardarPostulacion']);
 
 $router->get('/login', [AuthController::class, 'showLoginForm']);
 $router->post('/login', [AuthController::class, 'login']);

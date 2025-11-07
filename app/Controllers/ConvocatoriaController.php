@@ -17,6 +17,13 @@ class ConvocatoriaController
         require_once __DIR__ . '/../Views/bolsatrabajo/empresas.view.php';
     }
 
+    public function showConvocatoriaIdForm()
+    {
+        $convocatoriaId = $_POST['convocatoria_id'] ?? null;
+        $convocatoria = Convocatoria::find($convocatoriaId);
+        require_once __DIR__ . '/../Views/bolsatrabajo/detalleConvocatoria.view.php';
+    }
+
     public function postular()
     {
 
