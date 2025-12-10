@@ -43,7 +43,7 @@ class ArchivoController
 
         $archivo = new Archivo();
         $archivo->descripcion = $descripcion;
-        $archivo->ruta = $ruta;
+        $archivo->ruta_archivo = $ruta;
         $archivo->enlace = $data['enlace'] ?? '';
 
         $archivo->save();
@@ -86,10 +86,10 @@ class ArchivoController
 
             if (move_uploaded_file($nombreTmp, $directorioDestino . basename($nuevaRuta))) {
                 // Eliminar el archivo anterior si existía
-                if (!empty($archivo->ruta) && file_exists(__DIR__ . '/../../public/' . $archivo->ruta)) {
-                    unlink(__DIR__ . '/../../public/' . $archivo->ruta);
+                if (!empty($archivo->ruta_archivo) && file_exists(__DIR__ . '/../../public/' . $archivo->ruta_archivo)) {
+                    unlink(__DIR__ . '/../../public/' . $archivo->ruta_archivo);
                 }
-                $archivo->ruta = $nuevaRuta;
+                $archivo->ruta_archivo = $nuevaRuta;
             }
         }
 
@@ -110,8 +110,8 @@ class ArchivoController
         $archivo = Archivo::findById($id);
 
         if ($archivo) {
-            if (!empty($archivo->ruta) && file_exists(__DIR__ . '/../../public/' . $archivo->ruta)) {
-                unlink(__DIR__ . '/../../public/' . $archivo->ruta);
+            if (!empty($archivo->ruta_archivo) && file_exists(__DIR__ . '/../../public/' . $archivo->ruta_archivo)) {
+                unlink(__DIR__ . '/../../public/' . $archivo->ruta_archivo);
             }
             Archivo::destroy($id);
         }

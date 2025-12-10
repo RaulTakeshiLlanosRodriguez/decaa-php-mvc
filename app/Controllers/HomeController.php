@@ -23,6 +23,8 @@ class HomeController{
         require_once __DIR__ . '/../Views/oaac.view.php';
     }
 
+
+
     public function acreditacion(){
         require_once __DIR__ . '/../Views/acreditacion.view.php';
     }
