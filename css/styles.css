@@ -949,6 +949,39 @@ h4 {
     color: #c65870;
 }
 
+.acreditacion {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px 40px;
+    line-height: 1.7;
+}
+
+.acreditacion h2 {
+    text-align: center;
+    color: #d82f4b;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.acreditacion h3 {
+    margin-top: 35px;
+    margin-bottom: 15px;
+    color: #c62828; /* rojo institucional */
+}
+
+.acreditacion p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.acreditacion ul {
+    margin: 15px 0 25px 25px;
+}
+
+.acreditacion li {
+    margin-bottom: 10px;
+}
+
 /*seccion bolsa trabajo*/
 
 /* ======= Misión y Visión ======= */
@@ -1216,5 +1249,36 @@ h4 {
         border-left: none;
         border-top: 3px solid #d82f4b;
         padding-top: 8px;
+    }
+
+    .acreditacion {
+        max-width: 100%;
+        margin: 20px 10px;
+        padding: 20px;
+    }
+
+    .acreditacion h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .acreditacion h3 {
+        font-size: 1.2rem;
+        margin-top: 25px;
+        margin-bottom: 12px;
+    }
+
+    .acreditacion p {
+        text-align: left; /* mejor lectura en móvil */
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .acreditacion ul {
+        margin-left: 20px;
+    }
+
+    .acreditacion li {
+        font-size: 0.95rem;
     }
 }
