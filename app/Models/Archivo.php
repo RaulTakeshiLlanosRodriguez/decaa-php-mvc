@@ -10,7 +10,7 @@ class Archivo
     public $id;
     public $descripcion;
     public $enlace;
-    public $ruta;
+    public $ruta_archivo;
 
     public function save()
     {
@@ -20,7 +20,7 @@ class Archivo
             return $stmt->execute([
                 $this->descripcion,
                 $this->enlace,
-                $this->ruta,
+                $this->ruta_archivo,
                 $this->id
             ]);
         } else {
@@ -28,7 +28,7 @@ class Archivo
             return $stmt->execute([
                 $this->descripcion,
                 $this->enlace,
-                $this->ruta
+                $this->ruta_archivo
             ]);
         }
     }
